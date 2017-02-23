@@ -31,8 +31,10 @@ def cv_optimize(clf, parameters, X, y, n_jobs=1, n_folds=5, score_func=None):
         Количество одновременно запускаемых параллельно задач.
     n_folds : int
         Параметр кроссвалидации
-    score_func : callable, optional
-        Функция оценки результата, принимающая векторы Y и Y' (цель обучения и предсказания).
+    score_func : string or callable, optional
+        Функция оценки результата, принимающая классификатор,
+        X и Y (предикторы и целевую колонку).
+        Стандартные функции описаны в sklearn Model Evaluation docs.
         При отсутствии используется clf.score
 
     Returns
